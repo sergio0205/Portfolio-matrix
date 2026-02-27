@@ -1,0 +1,360 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    background: black;
+    color: #00ff00;
+    font-family: monospace;
+    overflow-x: hidden;
+}
+
+/* MATRIX CANVAS */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* PANTALLA INICIAL */
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+}
+
+/* BOTONES */
+button {
+
+    margin-top: 50px;
+    padding: 15px 31px;
+
+    background: transparent;
+    border-radius: 20px;
+
+    font-family: monospace;
+    font-size: 16px;
+
+    border: none;
+
+    margin-left: 40px;
+    margin-right: 40px;
+
+    cursor: pointer;
+}
+
+#Btn1 {
+    background-color: #2196f3;
+    color: #0d47a1;
+}
+
+#Btn1:hover {
+    background-color: #42a5f5;
+}
+
+#Btn2 {
+    background-color: #f44336;
+    color: #7f0000;
+}
+
+#Btn2:hover {
+    background-color: #ef5350;
+}
+
+/* TEXTO INICIAL */
+#text {
+
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 42px;
+    letter-spacing: 3px;
+    position: relative;
+    display: inline-block;
+    padding: 20px 40px;
+    color: #00ff00;
+    z-index: 2;
+    white-space: nowrap;
+}
+
+#text::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    backdrop-filter: blur(15px);
+
+    background: rgba(0,0,0,0.35);
+
+    border-radius: 30px;
+
+    z-index: -1;
+}
+
+/* PORTFOLIO */
+#portfolio {
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: none;
+
+    opacity: 0;
+
+    transition: opacity 1.5s;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.portfolio-container {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 100px;
+
+    min-height: 100vh;
+}
+
+/* LADO IZQUIERDO */
+.left-section {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+/* TEXTO HELLO WORLD */
+.intro-text {
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 16px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+
+    opacity: 0.7;
+}
+
+/* CONTENEDOR IMAGEN */
+.image-container {
+
+    position: relative;
+
+    width: 320px;
+    height: 320px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.image-glow {
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    background: #2196f3;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    opacity: 0.7;
+
+    z-index: 0; 
+}
+
+
+#profile-pic {
+
+    width: 320px;
+    height: 320px;
+
+    border-radius: 50%;
+
+    position: relative;
+
+    z-index: 2; 
+}
+
+/* LADO DERECHO */
+.right-section {
+
+    width: 500px;
+}
+
+/* TITULO */
+.title {
+
+    font-size: 48px;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-weight: 700;
+}
+
+/* SUBTITULOS */
+.section-title {
+
+    margin-top: 30px;
+
+    font-size: 28px;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+/* DESCRIPCION */
+.description {
+
+    margin-top: 15px;
+
+    max-width: 500px;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    opacity: 0.8;
+}
+
+/* SKILLS */
+.skills {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 15px;
+}
+
+/* CAJAS SKILLS */
+.skill-box {
+
+    padding: 10px 20px;
+
+    border-radius: 8px;
+
+    border: 1px solid currentColor;
+}
+
+/* TEMA AZUL */
+.blue-theme {
+    color: #2196f3;
+}
+
+.blue-theme .title,
+.blue-theme .section-title,
+.blue-theme .skill-box {
+
+    color: #2196f3;
+
+    border-color: #2196f3;
+}
+
+.blue-theme .image-glow {
+    background: #2196f3;
+}
+
+.blue-theme #profile-pic {
+    box-shadow: 0 0 30px #2196f3;
+}
+
+/* TEMA ROJO */
+.red-theme {
+    color: #f44336;
+}
+
+.red-theme .title,
+.red-theme .section-title,
+.red-theme .skill-box {
+
+    color: #f44336;
+
+    border-color: #f44336;
+}
+
+.red-theme .image-glow {
+    background: #f44336;
+}
+
+.red-theme #profile-pic {
+    box-shadow: 0 0 30px #f44336;
+}
+
+#backBtn {
+
+    position: fixed;
+
+    top: 20px;
+    left: 20px;
+
+    padding: 10px 20px;
+
+    background: transparent;
+
+    border: 1px solid currentColor;
+
+    color: currentColor;
+
+    font-family: 'Share Tech Mono', monospace;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    border-radius: 8px;
+
+    z-index: 100;
+
+    transition: 0.3s;
+
+}
+
+.blue-theme #backBtn:hover {
+
+    background: #2196f3;
+    border-color: #2196f3;
+    color: black;
+
+    box-shadow: 0 0 15px #2196f3;
+
+}
+
+
+.red-theme #backBtn:hover {
+
+    background: #f44336;
+    border-color: #f44336;
+    color: black;
+
+    box-shadow: 0 0 15px #f44336;
+
+}
